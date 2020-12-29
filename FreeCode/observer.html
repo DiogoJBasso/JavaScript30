@@ -1,0 +1,11 @@
+<script>
+  const state = {
+    observer=[]
+  }
+  function subscribe(observerFunction){
+    state.observer.push(observerFunction)
+  }
+  function notifyAll(command) {
+    console.log(`Notfying at ${} observers`)
+  }
+</script>
