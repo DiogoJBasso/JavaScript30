@@ -65,6 +65,23 @@
       <li data-time="1:56">Video 57</li>
       <li data-time="4:04">Video 58</li>
     </ul>
-    <script></script>
+    <script>
+      const videos = Array.from(document.querySelectorAll("[data-time]"));
+      const Totalseconds = videos
+        .map((node) => node.dataset.time)
+        .map((unFormated) => {
+          console.log(unFormated);
+          const [min, sec] = unFormated.split(":").map(parseFloat);
+          return min * 60 + sec;
+        })
+        .reduce((total, seconds) => total + seconds);
+      let TimeLeft = Totalseconds;
+      const hours = Math.floor(TimeLeft / 3600);
+      TimeLeft = TimeLeft % 3600;
+      const mins = Math.floor(TimeLeft / 60);
+      TimeLeft = TimeLeft % 60;
+      console.log(videos);
+      console.log(hours, mins, TimeLeft);
+    </script>
   </body>
 </html>
