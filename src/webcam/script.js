@@ -52,4 +52,3 @@ function takePhoto() {
   strip.insertBefore(link, strip.firstChild);
 }
 video.addEventListener("canplay", paintToCanvas);
-

@@ -1,10 +1,17 @@
-# JavaScript30
+# Curso JavaScript30
 
-Este é um curso americano realizado por @wesbos, em que ao longo de 30 dias é lecionado desde o básico até o avaçado em Javascript.
-Assista aqui: [https://JavaScript30.com](https://JavaScript30.com)
+## Como funciona?
+
+Este é um curso americano realizado por _@wesbos_, em que ao longo de 30 dias é lecionado e vivido desde o básico até o avançado em Javascript "vanilla". Recomendo fortemente para todos que estão começando e almejam ser desafiados e pegar mais
+traquejo em JS.
+
+Assista aqui em inglês: [https://JavaScript30.com](https://JavaScript30.com)
+Assista em Português:
 
 ## Benefícios do #JavaScript30
 
-Uma forma de engajar, por meio de desafios, que ultrapassa e *desafia* apenas a sintaxe da linguajem, abordando a questão lógica com aplicações do mundo real;
-Uma consistência no aprendizado haja visto que é encorajado, durante 30 dias, o aprendizado de JS;
-e muito mais benefícios que só serão possíveis caso entre no curso.
+1. Uma forma de engajar, por meio de desafios em aplicações web, e transformar o javascript, abordando a **aplicações do mundo real**;
+2. Uma **consistência** no aprendizado haja visto que é encorajado, durante 30 dias, o aprendizado de JS;
+3. Uma didática impressionante no que concerne à funções e simplificações dessa.
+
+   e muito mais benefícios que só serão possíveis caso entre no curso.
