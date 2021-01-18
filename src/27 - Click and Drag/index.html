@@ -62,7 +62,7 @@
         event.preventDefault();
         let x = event.pageX - slider.offsetLeft;
         let walk = x - startX;
-        slider.scrollLeft = walk;
+        slider.scrollLeft = scrollLeft - walk;
       });
     </script>
   </body>
