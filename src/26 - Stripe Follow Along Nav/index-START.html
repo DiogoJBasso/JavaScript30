@@ -16,7 +16,11 @@
           <a href="#">About Me</a>
           <div class="dropdown dropdown1">
             <div class="bio">
-              <img src="https://logo.clearbit.com/wesbos.com" />
+              <img
+                src="https://avatars2.githubusercontent.com/u/65865529?s=460&u=e3c1f85fdc1fad73eb2b097627eac1cb674e0ed1&v=4"
+                width="200"
+                height="200"
+              />
               <p>
                 Wes Bos sure does love web development. He teaches things like
                 JavaScript, CSS and BBQ. Wait. BBQ isn't part of web
@@ -260,6 +264,37 @@
       }
     </style>
 
-    <script></script>
+    <script>
+      const triggers = document.querySelectorAll(".cool > li");
+      const background = document.querySelector(".dropdownBackground");
+      const nav = document.querySelector(".top");
+      function handleEnter() {
+        this.classList.add("trigger-enter");
+        setTimeout(() => this.classList.add("trigger-enter-active"), 150);
+        background.classList.add("open");
+
+        const dropdown = this.querySelector(".dropdown");
+        console.log(dropdown);
+        const dropdownCoords = dropdown.getBoundingClientRect();
+        const navCords = nav.getBoundingClientRect();
+        const coords = {
+          height: dropdownCoords.height,
+          width: dropdownCoords.width,
+        };
+        background.style.setProperty("width", `${coords.width}px`);
+        background.style.setProperty("height", `${coords.height}px`);
+      }
+      function handleLeave() {
+        setTimeout(() => this.classList.remove("trigger-enter"), 50);
+        background.classList.add("open");
+      }
+      triggers.forEach((element) =>
+        element.addEventListener("mouseenter", handleEnter)
+      );
+
+      triggers.forEach((element) =>
+        element.addEventListener("mouseleave", handleLeave)
+      );
+    </script>
   </body>
 </html>
