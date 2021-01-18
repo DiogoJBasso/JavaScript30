@@ -61,7 +61,7 @@
         if (!isDown) return;
         event.preventDefault();
         let x = event.pageX - slider.offsetLeft;
-        let walk = x - startX;
+        let walk = (x - startX) * 1.5;
         slider.scrollLeft = scrollLeft - walk;
       });
     </script>
