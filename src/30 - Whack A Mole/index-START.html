@@ -39,10 +39,55 @@
       const holes = document.querySelectorAll(".hole");
       const scoreBoard = document.querySelector(".score");
       const moles = document.querySelectorAll(".mole");
+      let lastHole;
+      let timeUp;
 
-      function randTime(min, max) {
+      function randomTime(min, max) {
         return Math.round(Math.random() * (max - min) + min);
       }
+
+      function randomHole(holes) {
+        const index = Math.floor(Math.random() * holes.length);
+        const hole = holes[index];
+        if (hole === lastHole) return randomHole(holes);
+
+        lastHole = hole;
+        return hole;
+      }
+
+      function popUpHole() {
+        const time = randomTime(200, 1000);
+        const hole = randomHole(holes);
+        hole.classList.add("up");
+        console.log(time, hole);
+        setTimeout(() => {
+          hole.classList.remove("up");
+          if (!timeUp) popUpHole();
+        }, time);
+      }
+
+      function startGame() {
+        scoreBoard.textContent = 0;
+        timeUp = false;
+        score = 0;
+        popUpHole();
+        setTimeout(() => (timeUp = true), 10000);
+      }
+
+      function bonk(event) {
+        if (!event.isTrusted) {
+          alert("Cheater!");
+          return;
+        }
+        score++;
+        this.classList.remove("up");
+        scoreBoard.textContent = score;
+      }
+
+      moles.forEach((mole) =>
+        mole.addEventListener("click", bonk, { once: true })
+      );
+      //TODO: make desing better; implement a scoreboard with loal storage; add option of auth for sharing; add keyboard controls
     </script>
   </body>
 </html>
